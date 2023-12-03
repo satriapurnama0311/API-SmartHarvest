@@ -16,6 +16,6 @@ app.use(
 app.use(express.json())
 app.use(router)
 
-app.listen(PORT, () => {
+app.listen(PORT, process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0', () => {
   console.log(`Example app listening on port ${PORT}`)
 })
