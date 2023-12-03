@@ -66,7 +66,9 @@ const Login = async (req, res) => {
       message: 'Success',
     })
   } catch (error) {
-    console.log(error)
+    res.status(404).send({
+      message: 'Email not found.',
+    })
   }
 }
 
